@@ -18,7 +18,9 @@ INVALID_INPUT_MESSAGE = "Invalid input given. {} is not a valid input"
 INSUFFICIENT_FUNDS_MESSAGE = (
     "Insufficient Funds, please change your selection or add more funds."
 )
-RETURN_CHANGE_MESSAGE = "Press y to confirm, any other button to return to the Main Menu"
+RETURN_CHANGE_MESSAGE = (
+    "Press y to confirm, any other button to return to the Main Menu"
+)
 
 
 # Just an enum for the easy indication of current screen
@@ -153,7 +155,9 @@ class MachineState:
                     )
                 )
                 # Another slight hack, since the run_return_change function only ~does anything~ when the input is 'y', just piggy back off that and use it verbatum without changing screens
-                self.run_return_change(input("Return Change?\n" + RETURN_CHANGE_MESSAGE))
+                self.run_return_change(
+                    input("Return Change?\n" + RETURN_CHANGE_MESSAGE)
+                )
         except:
             self.user_message = INVALID_INPUT_MESSAGE.format(inp)
 
